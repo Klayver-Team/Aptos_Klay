@@ -33,6 +33,7 @@ module klaycontract_addr::Coin {
 
         // Deposit `amount` of tokens to `mint_addr`'s balance
         deposit(mint_addr, Coin { value: amount });
+        borrow_global<Balance>(mint_addr).coin.value;
     }
 
     /// Returns the balance of `owner`.
